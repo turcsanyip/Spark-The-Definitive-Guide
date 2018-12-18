@@ -1,0 +1,78 @@
+Ch1 What Is Apache Spark?
+-------------------------
+
+Spark is a
+  unified computing engine
+  and a set of libraries
+  for parallel data processing
+  on computer clusters
+
+Does not store data, but can read data from various sources:
+  - cloud (Ayure, S3)
+  - HDFS
+  - HBase, Cassandra
+  - Kafka
+
+Libraries:
+  - Spark SQL
+  - Spark Streaming / Structured Streaming
+  - MLlib
+  - GraphX
+
+History:
+  - 2009 UC Berkeley
+  - 2013- Apache project
+  - Databricks
+  - 2014: 1.0
+  - 2016: 2.0
+
+
+Ch2 A Gentle Introduction to Spark
+----------------------------------
+
+Languages: Scala, Python, Java, R, SQL
+
+Spark Application:
+  - 1 driver process + a set of executor processes
+  - they run on cluster nodes
+  - the nodes / resources are controlled by the cluster manager
+  - driver: executes main()
+  - executors: get tasks from the driver
+  - interactive (spark-shell / pyspark) or standalone (spark-submit)
+
+Cluster Manager:
+  - standalone (Spark's built-in)
+  - YARN
+  - Mesos
+
+1 cluster - multiple Spark applications parallel
+
+Local mode: all in one process (threads), eg: spark-shell
+
+SparkSession:
+  - 1 Spark Application - 1 SparkSession
+  - 'spark' object in the shell
+
+DataFame:
+  - Stuctured API
+  - has a schema
+  - a table of data with rows and columns
+  - ~ spreadsheet with named columns
+  - distributed, split to partitions (handled by Spark)
+
+Transformations:
+  - input DataFame -> output DataFame
+  - will be executed streamlined when an Action issued
+  - narrow dependency/transformation: 1 input partition - 1 output partition
+  - wide dependency/transformation: 1 input partition - multiple output partition => shuffle
+
+Actions:
+  - trigger computation
+  - types:
+      - show data in the console
+      - collect data to native objects (eg. Java)
+      - write data to output data source
+
+Spark UI:
+  - port: 4040
+  - spark-shell starts it
