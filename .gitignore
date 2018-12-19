@@ -1,2 +1,10 @@
 .DS_Store
 *.DS_Store
+.gradle/
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+build/
+target/
