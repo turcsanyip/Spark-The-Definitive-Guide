@@ -5,7 +5,6 @@ import org.apache.spark.sql.SparkSession
 object DataFrameBasics {
 
   def main(args: Array[String]): Unit = {
-
     val session = SparkSession.builder().appName("sparkguide").master("local[1]").getOrCreate()
     // 'spark' object in REPL
 
