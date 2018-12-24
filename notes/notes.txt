@@ -158,3 +158,27 @@ DataFrame transformations
   - remove row/column
   - transform row into column and vice versa
   - change the order of rows
+
+
+Ch6 Working with Different Types of Data
+----------------------------------------
+
+Convert native (eg. Scala) types to Spark types
+  lit(5)      Int => IntegerType
+  lit("five") String => StringType
+  lit(5.0)    Double => DoubleType
+
+Equality in Spark+Scala
+  ===   equalTo()   =
+  =!=   notEqual()  <> / !=
+
+eqNullSafe()
+
+eq() vs equalTo()
+
+< lt(), etc
+
+And
+  should be chained in where().where() (Spark will flatten them)
+Or
+  only inside where: where(col().or(col()))
