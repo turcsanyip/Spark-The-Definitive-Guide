@@ -182,3 +182,9 @@ And
   should be chained in where().where() (Spark will flatten them)
 Or
   only inside where: where(col().or(col()))
+
+Null values:
+  - schema does not enforce null check
+
+User defined functions
+  - should be written in Scala or Java
