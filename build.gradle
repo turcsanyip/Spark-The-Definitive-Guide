@@ -19,6 +19,8 @@ dependencies {
     compile group: 'org.apache.spark', name: 'spark-core_2.11', version: '2.4.0'
     compile group: 'org.apache.spark', name: 'spark-sql_2.11', version: '2.4.0'
     compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.12'
+    
+    runtime group: 'org.xerial', name: 'sqlite-jdbc', version: '3.25.2'
 }
 
 compileScala.targetCompatibility = "1.8"

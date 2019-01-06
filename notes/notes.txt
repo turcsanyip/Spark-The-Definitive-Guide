@@ -53,7 +53,7 @@ SparkSession:
   - 1 Spark Application - 1 SparkSession
   - 'spark' object in the shell
 
-DataFame:
+DataFrame:
   - Stuctured API
   - has a schema
   - a table of data with rows and columns
@@ -188,3 +188,59 @@ Null values:
 
 User defined functions
   - should be written in Scala or Java
+
+
+Ch09 Data Sources
+-----------------
+
+Read modes:
+  - permissive (def)
+  - dropMalformed
+  - failFast
+
+Write modes:
+  - append
+  - overwrite
+  - errorIfExists (def)
+  - ignore
+
+Core data source types
+  - CSV
+  - JSON (typically line-delimited)
+  - Parquet
+  - ORC
+  - JDBC
+  - Plain text
+
+Some CSV options
+  - sep (,)
+  - header (false)
+  - inferSchema (false)
+  - nullValue ("")
+  - dateFormat (yyyy-MM-dd)
+  - timestampFormat (yyyy-MM-dd’T’HH:mm​:ss.SSSZZ)
+  - compression / codec
+
+Some JSON options
+  - dateFormat (yyyy-MM-dd)
+  - timestampFormat (yyyy-MM-dd’T’HH:mm​:ss.SSSZZ)
+  - compression / codec
+
+Some JDBC options
+  - driver
+  - url
+  - dbtable
+  - partitionColumn, lowerBound, upperBound
+  - numPartitions
+  - fetchsize
+  - batchsize
+
+Data loading and partitions
+  - 1 file - 1 partition
+  - 1 file - multiple partitions
+  - multiple files - 1 partition
+
+  - 1 file - 1 executor (read / write)
+
+Bucketing:
+  prepartitioning the data (grouping data item that "belong" together)
